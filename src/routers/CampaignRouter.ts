@@ -6,9 +6,9 @@ const campaignRouter = Router();
 
 campaignRouter.post("/getall", campaignController.find);
 campaignRouter.get("/", campaignController.find);
-campaignRouter.get("/:code", campaignController.findByCode);
+campaignRouter.get("/searchby/:code", campaignController.findByCode);
 campaignRouter.get("/search/:status", campaignController.findByStatus);
-campaignRouter.get("/active/:status", campaignController.findByActive);
+//campaignRouter.get("/active/:status", campaignController.findByActive);
 campaignRouter.get("/find/:title", campaignController.findByTitle);
 campaignRouter.get("/:type", campaignController.findByType);
 campaignRouter.post("/", campaignController.create);

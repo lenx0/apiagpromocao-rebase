@@ -25,7 +25,7 @@ class CampaignController {
 
     async findByCode(req: Request, res: Response) {
         try {
-            const campaign = await CampaignSchema.findById(req.params.id);
+            const campaign = await CampaignSchema.find({ code: req.params.code} );
             return res.send({ campaign: campaign });
         } catch (err) {
             return res.status(400).send({ error: err });
@@ -38,7 +38,7 @@ class CampaignController {
             const dateTodayStr = `${dateToday}`
 
             const filter = {
-                status: "ativo",
+                status: "Ativo",
                 dateStart: { '$lte': dateToday },
                 dateEnd: { '$gte': dateToday },
             }
