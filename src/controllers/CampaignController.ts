@@ -11,7 +11,6 @@ class CampaignController {
         } catch (err) {
             return res.status(400).send({ error: err });
         }
-
     }
 
     async find(req: Request, res: Response) {
@@ -25,7 +24,7 @@ class CampaignController {
 
     async findByCode(req: Request, res: Response) {
         try {
-            const campaign = await CampaignSchema.find({ code: req.params.code} );
+            const campaign = await CampaignSchema.find({ code: req.params.code });
             return res.send({ campaign: campaign });
         } catch (err) {
             return res.status(400).send({ error: err });
@@ -52,7 +51,7 @@ class CampaignController {
 
     }
 
-    /*async findByIn4ctive(req: Request, res: Response) {
+    async findByIn4ctive(req: Request, res: Response) {
         try {
             const date_today = new Date;
             const date_today_str = `${date_today}`
@@ -68,7 +67,7 @@ class CampaignController {
         } catch (err) {
             return res.status(400).send({ error: err });
         }
-    }*/
+    }
 
     async findByTitle(req: Request, res: Response) {
         try {
