@@ -2,7 +2,7 @@ import { app } from "./app";
 
 require('dotenv').config();
 
-const host_port = process.env.HOST_PORT || 3001;
+const host_port = process.env.HOST_PORT || 3005;
 
 var fs = require('fs');
 var http = require('http');
